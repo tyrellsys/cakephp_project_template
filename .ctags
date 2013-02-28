@@ -1,0 +1,9 @@
+-R
+--totals=yes
+--tag-relative=yes
+--languages=PHP
+--langmap=php:+.ctp
+--PHP-kinds=-v
+--exclude=.svn
+--exclude=.git
+--exclude=*.phar
