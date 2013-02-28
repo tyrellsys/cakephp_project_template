@@ -1,8 +1,11 @@
 <phpdox xmlns="http://phpdox.de/config">
-  <project name="nttcom-racs-batch" source="app" workdir="build/phpdox">
+  <project name="cakephp" source="app" workdir="build/phpdox">
     <collector publiconly="false">
       <include mask="*.php" />
       <exclude mask="*Autoload.php" />
+      <exclude mask="app/Plugin/**" />
+      <exclude mask="app/Vendor/**" />
+      <exclude mask="lib/**" />
     </collector>
 
     <generator output="build">
