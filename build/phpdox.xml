@@ -1,5 +1,5 @@
 <phpdox xmlns="http://phpdox.de/config">
-  <project name="nttcom-wacs" source="app" workdir="build/phpdox">
+  <project name="cakephp" source="app" workdir="build/phpdox">
     <collector publiconly="false">
       <include mask="*.php" />
       <exclude mask="app/Plugin/**" />
