@@ -1,6 +1,7 @@
 <phpunit>
 <filter>
   <blacklist>
+    <directory suffix=".php">/usr/local/cakephp</directory>
     <directory suffix=".php">../lib</directory>
     <directory suffix=".php">../app/Plugin</directory>
     <directory suffix=".php">../app/Test</directory>
