@@ -5,11 +5,16 @@
     "minimum-stability": "dev",
     "repositories": [
         {
+            "type": "pear",
+            "url": "http://pear.cakephp.org"
+        },
+        {
             "type": "vcs",
             "url": "git://github.com/tyrellsys/CakeBehat.git"
         }
     ],
     "require": {
+        "pear-cakephp/cakephp": ">=2.4.3",
         "cakephp/debug_kit": "2.2.*@dev",
         "cakedc/migrations": "dev-master"
     },
