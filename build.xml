@@ -179,4 +179,60 @@
    <arg path="${basedir}/build/code-browser" />
   </exec>
  </target>
+
+ <target name="fix-permissions" description="Fix permissions of application files">
+  <chmod perm="g+w">
+   <fileset dir="${basedir}/app/tmp"/>
+  </chmod>
+  <chmod perm="g+ws">
+   <dirset dir="${basedir}/app/tmp"/>
+  </chmod>
+ </target>
+
+ <target name="clear-cache" description="Clear application's cache files">
+  <delete verbose="true">
+   <fileset dir="${basedir}/app/tmp/cache">
+    <include name="**/*"/>
+    <exclude name="**/empty"/>
+    <type type="file"/>
+   </fileset>
+  </delete>
+ </target>
+
+ <target name="composer-no-dev" description="Install dependencies by Composer">
+  <exec executable="php" dir="${basedir}/app">
+   <arg value="composer.phar"/>
+   <arg value="self-update"/>
+  </exec>
+  <exec executable="php" dir="${basedir}/app">
+   <arg value="composer.phar"/>
+   <arg value="install"/>
+   <arg value="--no-dev"/>
+  </exec>
+ </target>
+
+ <target name="composer-dev" description="Install dependencies by Composer">
+  <exec executable="php" dir="${basedir}/app">
+   <arg value="composer.phar"/>
+   <arg value="self-update"/>
+  </exec>
+  <exec executable="php" dir="${basedir}/app">
+   <arg value="composer.phar"/>
+   <arg value="install"/>
+   <arg value="--dev"/>
+  </exec>
+ </target>
+
+ <target name="compass-compile-pc" description="Compass Compile for PC">
+   <exec executable="compass" dir="${basedir}/sass/pc">
+     <arg value="compile" />
+   </exec>
+ </target>
+
+ <target name="compass-compile-sp" description="Compass Compile for SP">
+   <exec executable="compass" dir="${basedir}/sass/sp">
+     <arg value="compile" />
+   </exec>
+ </target>
+
 </project>
