@@ -1,6 +1,14 @@
+git add -f app/Plugin/empty
+git add -f app/Vendor
+git add -f app/tmp/cache/models/empty
+git add -f app/tmp/cache/persistent/empty
+git add -f app/tmp/cache/views/empty
+git add -f app/tmp/logs/empty
+git add -f app/tmp/sessions/empty
+git add -f app/tmp/tests/empty
 /app/Config/behat.yml
 /app/Config/database.php
-/app/Config/email.php
+/app/Config/core.php
 /app/Plugin
 /app/Vendor
 /app/tmp
@@ -12,8 +20,6 @@
 /build/pdepend
 /build/phpdox
 /lib/Cake/Console/Templates/skel/tmp/
-/plugins
-/vendors
 /dist
 /tags
 .DS_Store
