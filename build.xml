@@ -2,10 +2,10 @@
 
 <project name="CakePHP application" default="build">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,migrations,phpunit-ci,phpcb"/>
+   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,migrations,phpunit-ci"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,migrations,phpunit-ci,phpcb"/>
+   depends="prepare,lint,tools-parallel,migrations,phpunit-ci"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
@@ -167,17 +167,6 @@
      <arg value="--coverage-html=${basedir}/build/coverage" />
      <arg value="--log-junit=${basedir}/build/logs/junit.xml" />
    </exec>
- </target>
-
- <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
-  <exec executable="phpcb">
-   <arg value="--log" />
-   <arg path="${basedir}/build/logs" />
-   <arg value="--source" />
-   <arg path="${basedir}/app" />
-   <arg value="--output" />
-   <arg path="${basedir}/build/code-browser" />
-  </exec>
  </target>
 
  <target name="fix-permissions" description="Fix permissions of application files">

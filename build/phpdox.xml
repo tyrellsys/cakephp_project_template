@@ -1,4 +1,5 @@
-<phpdox xmlns="http://phpdox.de/config">
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://phpdox.net/config">
   <project name="cakephp" source="app" workdir="build/phpdox">
     <collector publiconly="false">
       <include mask="*.php" />
